@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:resume_cv/utils/colors.dart';
 import 'package:resume_cv/utils/images_all.dart';
@@ -34,6 +35,54 @@ class _StartedPageState extends State<StartedPage> {
                   decoration: BoxDecoration(
                   color: Colors.white,
                     borderRadius: BorderRadius.circular(h/40)
+                  ),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        SizedBox(height: h/35,),
+                        Container(
+                          width: w/5,
+                          height: h/10,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(h/60),
+                            image: DecorationImage(
+                              image: logoImage,
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        ),
+                              SizedBox(height: 30,),
+                        // Text.rich(
+                        //   TextSpan(
+                        //     children: [
+                        //     ]
+                        //   )
+                        // )
+                              Text('JUBI allows you to create your create resumes',style: TextStyle(color: onScreenColor,fontSize: w/25,fontWeight: FontWeight.w600,),),
+                              Text('with many templates and share them.',style: TextStyle(color: onScreenColor,fontSize: w/25,fontWeight: FontWeight.w600),),
+                        SizedBox(height: 20,),
+                        ElevatedButton(
+                          style: ButtonStyle(
+                            minimumSize: MaterialStateProperty.all(Size(w/2, w/7)),
+                            // maximumSize: MaterialStateProperty.all(Size(600, 100)),
+                            backgroundColor: MaterialStateColor.resolveWith((states) => onScreenColor),
+                            overlayColor: MaterialStateColor.resolveWith((states) => Colors.white30)
+                          ),
+                            onPressed: () {
+
+                        }, child: Text('Get Started',style: TextStyle(color: Colors.white,fontSize: w/20),)),
+                        SizedBox(height: 40,),
+                        Text('By continuing, you accept our',style: TextStyle(color: Colors.black54,fontSize: w/35,),),
+                        Text.rich(TextSpan(
+                          children: [
+
+                        TextSpan(text: 'Term of Use',style: TextStyle(color: onScreenColor,fontSize: w/33.5,fontWeight: FontWeight.bold),),
+                        TextSpan(text: ' & ',style: TextStyle(color: Colors.black54,fontSize: w/35,),),
+                        TextSpan(text: 'Privacy Policy',style: TextStyle(color: onScreenColor,fontSize: w/33.5,fontWeight: FontWeight.bold),),
+                          ]
+                        ),),
+                      ],
+                    ),
                   ),
                 ),
               ],
