@@ -8,5 +8,6 @@ class Approutes
   static Map<String, Widget Function(BuildContext)> routes={
     '/view': (context)=>const OnScreen(),
     '/started': (context)=>const StartedPage(),
+
   };
 }
