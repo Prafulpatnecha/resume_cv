@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:resume_cv/controller/routes.dart';
-import 'package:resume_cv/utils/images_all.dart';
 
 class ResumeApp extends StatelessWidget {
   const ResumeApp({super.key});
@@ -11,7 +10,7 @@ class ResumeApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Akhil Sir',
       // title:'Resume Cv'
-      initialRoute: '/',
+      initialRoute: '/first',
       routes: Approutes.routes,
     );
   }

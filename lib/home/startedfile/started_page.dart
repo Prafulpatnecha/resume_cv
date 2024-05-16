@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:resume_cv/utils/colors.dart';
 import 'package:resume_cv/utils/images_all.dart';
@@ -42,7 +41,7 @@ class _StartedPageState extends State<StartedPage> {
                         SizedBox(height: h/35,),
                         Container(
                           width: w/5,
-                          height: h/10,
+                          height: w/5,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(h/60),
                             image: DecorationImage(
@@ -51,7 +50,7 @@ class _StartedPageState extends State<StartedPage> {
                             ),
                           ),
                         ),
-                              SizedBox(height: 30,),
+                              const SizedBox(height: 30,),
                         // Text.rich(
                         //   TextSpan(
                         //     children: [
@@ -60,7 +59,7 @@ class _StartedPageState extends State<StartedPage> {
                         // )
                               Text('JUBI allows you to create your create resumes',style: TextStyle(color: onScreenColor,fontSize: w/25,fontWeight: FontWeight.w600,),),
                               Text('with many templates and share them.',style: TextStyle(color: onScreenColor,fontSize: w/25,fontWeight: FontWeight.w600),),
-                        SizedBox(height: 20,),
+                        const SizedBox(height: 20,),
                         ElevatedButton(
                           style: ButtonStyle(
                             minimumSize: MaterialStateProperty.all(Size(w/2, w/7)),
@@ -69,9 +68,9 @@ class _StartedPageState extends State<StartedPage> {
                             overlayColor: MaterialStateColor.resolveWith((states) => Colors.white30)
                           ),
                             onPressed: () {
-
+                            Navigator.of(context).pushNamed('/first');
                         }, child: Text('Get Started',style: TextStyle(color: Colors.white,fontSize: w/20),)),
-                        SizedBox(height: 40,),
+                        const SizedBox(height: 40,),
                         Text('By continuing, you accept our',style: TextStyle(color: Colors.black54,fontSize: w/35,),),
                         Text.rich(TextSpan(
                           children: [
