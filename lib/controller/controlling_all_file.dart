@@ -10,7 +10,8 @@ class ResumeApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Akhil Sir',
       // title:'Resume Cv'
-      initialRoute: '/first',
+      initialRoute: '/started',
+      // initialRoute: '/first',
       routes: Approutes.routes,
     );
   }
