@@ -49,7 +49,7 @@ Container textContinue({required double w,required String textfindfirst,required
   return Container(
     margin: const EdgeInsets.all(20),
     height: 200,
-    width: w / 1.4,
+    width: w / 1.3,
     color: Colors.white,
     child:  SingleChildScrollView(
       child: Column(

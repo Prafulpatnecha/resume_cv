@@ -12,6 +12,7 @@ class ResumeApp extends StatelessWidget {
       // title:'Resume Cv'
       initialRoute: '/started',
       // initialRoute: '/first',
+      // initialRoute: '/third',
       routes: Approutes.routes,
     );
   }

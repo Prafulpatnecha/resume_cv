@@ -65,6 +65,7 @@ class _ContinueSecondPageState extends State<ContinueSecondPage> {
                                   (states) => onScreenColor),
                         ),
                         onPressed: () {
+                          Navigator.of(context).pushNamed('/third');
                         },
                         child: const Text(
                           'Continue',
