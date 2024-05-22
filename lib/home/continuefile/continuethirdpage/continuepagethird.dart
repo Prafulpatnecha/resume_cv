@@ -79,12 +79,12 @@ class _ContinueThirdPageState extends State<ContinueThirdPage> {
                         buttonfind: ElevatedButton(
                           style: ButtonStyle(
                             minimumSize:
-                                MaterialStateProperty.all(Size(w / 2, 60)),
-                            backgroundColor: MaterialStateColor.resolveWith(
+                                WidgetStateProperty.all(Size(w / 2, 60)),
+                            backgroundColor: WidgetStateColor.resolveWith(
                                 (states) => onScreenColor),
                           ),
                           onPressed: () {
-                            Navigator.of(context).pushNamed('');
+                            Navigator.of(context).pushNamed('/profile');
                           },
                           child: const Text(
                             'Continue',

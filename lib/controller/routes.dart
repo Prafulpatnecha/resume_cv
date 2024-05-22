@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:resume_cv/home/navigatortype_file/profilefile/profilepage.dart';
 import 'package:resume_cv/home/startedfile/started_page.dart';
 
 import '../home/continuefile/continuefirstpage/continuepagefirst.dart';
@@ -15,5 +16,6 @@ class Approutes
     '/first':(context)=>const ContinueFirstPage(),
     '/second':(context)=>const ContinueSecondPage(),
     '/third':(context)=>const ContinueThirdPage(),
+    '/profile':(context)=>const ProfilePage(),
   };
 }
