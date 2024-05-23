@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:image_picker/image_picker.dart';
 
 GlobalKey<FormState> personalkey=GlobalKey();
@@ -72,17 +73,37 @@ class CertificateModal
   TextEditingController? txtSummary;
   CertificateModal({this.txtCertificateName,this.txtCertificationYear,this.txtInstituteName,this.txtSummary,});
 }
-//Todo Skill Tab
-TextEditingController txtSkill=TextEditingController();
-TextEditingController txtLevel=TextEditingController();
-TextEditingController txtExperience =TextEditingController();
-TextEditingController txtSummarySkill=TextEditingController();
-List<SkillModal> skillList=[];
-class SkillModal
+//Todo Language Tab
+List<LanguageModal> languageList=[];
+TextEditingController txtLanguage=TextEditingController();
+class LanguageModal
 {
-  TextEditingController? txtSkill;
-  TextEditingController? txtLevel;
-  TextEditingController? txtExperience;
-  TextEditingController? txtSummarySkill;
-  SkillModal({this.txtExperience,this.txtLevel,this.txtSkill,this.txtSummarySkill,});
+  TextEditingController? txtLanguage;
+  LanguageModal({this.txtLanguage});
+}
+//Todo Skills Tab
+List<SkillsModal> skillsList=[];
+TextEditingController txtSkills=TextEditingController();
+TextEditingController txtExperience=TextEditingController();
+class SkillsModal
+{
+TextEditingController? txtExperience;
+  TextEditingController? txtSkills;
+  SkillsModal({this.txtSkills,this.txtExperience});
+}
+//Todo References Tab
+TextEditingController txtFullName=TextEditingController();
+TextEditingController txtPositionTitle=TextEditingController();
+TextEditingController txtCompanyName=TextEditingController();
+TextEditingController txtPhoneNumber=TextEditingController();
+TextEditingController txtEmailAddress=TextEditingController();
+List<ReferencesModal> referencesList=[];
+class ReferencesModal
+{
+  TextEditingController? txtFullName;
+  TextEditingController? txtPositionTitle;
+  TextEditingController? txtCompanyName;
+  TextEditingController? txtPhoneNumber;
+  TextEditingController? txtEmailAddress;
+  ReferencesModal({this.txtCompanyName,this.txtEmailAddress,this.txtFullName,this.txtPhoneNumber,this.txtPositionTitle});
 }
