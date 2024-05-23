@@ -60,8 +60,8 @@ class _ContinueSecondPageState extends State<ContinueSecondPage> {
                       buttonContinue(w: w, buttonfind:  ElevatedButton(
                         style: ButtonStyle(
                           minimumSize:
-                          MaterialStateProperty.all(Size(w / 2, 60)),
-                          backgroundColor: MaterialStateColor.resolveWith(
+                          WidgetStateProperty.all(Size(w / 2, 60)),
+                          backgroundColor: WidgetStateColor.resolveWith(
                                   (states) => onScreenColor),
                         ),
                         onPressed: () {

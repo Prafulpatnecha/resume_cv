@@ -62,10 +62,10 @@ class _StartedPageState extends State<StartedPage> {
                         const SizedBox(height: 20,),
                         ElevatedButton(
                           style: ButtonStyle(
-                            minimumSize: MaterialStateProperty.all(Size(w/2, w/7)),
+                            minimumSize: WidgetStateProperty.all(Size(w/2, w/7)),
                             // maximumSize: MaterialStateProperty.all(Size(600, 100)),
-                            backgroundColor: MaterialStateColor.resolveWith((states) => onScreenColor),
-                            overlayColor: MaterialStateColor.resolveWith((states) => Colors.white30)
+                            backgroundColor: WidgetStateColor.resolveWith((states) => onScreenColor),
+                            overlayColor: WidgetStateColor.resolveWith((states) => Colors.white30)
                           ),
                             onPressed: () {
                             Navigator.of(context).pushNamed('/first');

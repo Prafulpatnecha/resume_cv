@@ -24,8 +24,8 @@ class _ContinueFirstPageState extends State<ContinueFirstPage> {
         child: buildStack(h: h, w: w,doublefindone: -0.9,doublefindtwo: 0, imagefind: pagesecondImage, buttonfind:  ElevatedButton(
           style: ButtonStyle(
             minimumSize:
-            MaterialStateProperty.all(Size(w / 2, 60)),
-            backgroundColor: MaterialStateColor.resolveWith(
+            WidgetStateProperty.all(Size(w / 2, 60)),
+            backgroundColor: WidgetStateColor.resolveWith(
                     (states) => onScreenColor),
           ),
           onPressed: () {Navigator.of(context).pushNamed('/second');
