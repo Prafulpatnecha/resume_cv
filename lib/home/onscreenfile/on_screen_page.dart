@@ -1,6 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:resume_cv/utils/colors.dart';
 import 'package:resume_cv/utils/images_all.dart';
+
+import '../startedfile/started_page.dart';
 
 class OnScreen extends StatefulWidget {
   const OnScreen({super.key});
@@ -11,6 +15,13 @@ class OnScreen extends StatefulWidget {
 
 class _OnScreenState extends State<OnScreen> {
   @override
+  void initState() {
+    super.initState();
+    Timer(
+        const Duration(seconds: 3),
+            () => Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (BuildContext context) => const StartedPage())));
+  }
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;

@@ -187,6 +187,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         FloatingActionButton(
                           backgroundColor: onContinueColor,
                           onPressed: () {
+                            Navigator.of(context).pushNamed('/pdf');
                             personalkey.currentState!.validate();
                           },
                           child: const Icon(
@@ -908,7 +909,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     lengthfind: 150,
                                     valueintfind: 7,
                                     controllerfind: certificateList[index]
-                                        .txtCertificationYear!),
+                                        .txtSummary!),
                               ),
                             ],
                           ),
@@ -1328,7 +1329,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     )),
                 onPressed: () {
                   setState(() {
-
+                    Navigator.of(context).pushNamed('/pdf');
                   });
                 },
                 child: const Text(
