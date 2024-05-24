@@ -20,6 +20,11 @@ samples, guidance on mobile development, and a full API reference.
 <hr>
 <p>
 <a href ="">
+<img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot1.png" width="22%" Height="35%">
+<img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_2.png" width="22%" Height="35%">
+<img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_3.png" width="22%" Height="35%">
+<img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_4.png" width="22%" Height="35%">
+<img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_5.png" width="22%" Height="35%">
 <img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_20240524_112131.png" width="22%" Height="35%">
 <img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_20240524_112141.png" width="22%" Height="35%">
 <img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_20240524_112154.png" width="22%" Height="35%">
@@ -29,7 +34,7 @@ samples, guidance on mobile development, and a full API reference.
 <img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_20240524_112224.png" width="22%" Height="35%">
 <img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_20240524_112236.png" width="22%" Height="35%">
 <img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_20240524_112242.png" width="22%" Height="35%">
-<img src="" width="22%" Height="35%">
+<img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_6.png" width="22%" Height="35%">
 </a>
 </p>
 <hr>
