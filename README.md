@@ -31,6 +31,7 @@ https://github.com/Prafulpatnecha/resume_cv/assets/144161200/8da67f41-a353-406c-
 <img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_3.png" width="22%" Height="35%">
 <img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_4.png" width="22%" Height="35%">
 <img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_5.png" width="22%" Height="35%">
+<img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_11.png" width="22%" Height="35%">
 <img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_20240524_112131.png" width="22%" Height="35%">
 <img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_20240524_112141.png" width="22%" Height="35%">
 <img src="https://github.com/Prafulpatnecha/resume_cv/blob/master/Screenshot_20240524_112154.png" width="22%" Height="35%">
