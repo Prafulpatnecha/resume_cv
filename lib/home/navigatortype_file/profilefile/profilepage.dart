@@ -19,14 +19,8 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    double h = MediaQuery
-        .of(context)
-        .size
-        .height;
-    double w = MediaQuery
-        .of(context)
-        .size
-        .width;
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return DefaultTabController(
       initialIndex: 0,
       length: 9,
@@ -119,13 +113,13 @@ class _ProfilePageState extends State<ProfilePage> {
                                 },
                                 child: (fileimage != null)
                                     ? CircleAvatar(
-                                    radius: double.infinity,
-                                    backgroundImage: FileImage(fileimage!))
+                                        radius: double.infinity,
+                                        backgroundImage: FileImage(fileimage!))
                                     : const CircleAvatar(
-                                  radius: double.infinity,
-                                  backgroundImage: AssetImage(
-                                      'assets/img/profile.png'),
-                                ),
+                                        radius: double.infinity,
+                                        backgroundImage: AssetImage(
+                                            'assets/img/profile.png'),
+                                      ),
                               ),
                               Align(
                                 alignment: Alignment.bottomCenter,
@@ -177,7 +171,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ListTile(
                       title: nameTextField(
                           textFind:
-                          'Example: Experienced marketer with a creative edge. Skilled in branding, social media, and revenue generation. Dedicated to driving results for businesses',
+                              'Example: Experienced marketer with a creative edge. Skilled in branding, social media, and revenue generation. Dedicated to driving results for businesses',
                           lengthfind: 151,
                           valueintfind: 5,
                           controllerfind: txtAboutme,
@@ -257,105 +251,104 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 ...List.generate(
                   socialList.length,
-                      (index) =>
-                      Container(
-                        child: Column(
-                          children: [
-                            buildRowTextOnly(textFind: 'Platform'),
-                            ListTile(
-                              title: nameTextField(
-                                  textFind: 'Instagram',
-                                  lengthfind: 21,
-                                  valueintfind: 1,
-                                  controllerfind: socialList[index].platform,
-                                  keybordfindType: TextInputType.text),
-                            ),
-                            buildRowTextOnly(textFind: 'Username'),
-                            ListTile(
-                              title: nameTextField(
-                                  textFind: 'Admin1234',
-                                  lengthfind: 31,
-                                  valueintfind: 1,
-                                  controllerfind: socialList[index].username,
-                                  keybordfindType: TextInputType.text),
-                            ),
-                            buildRowTextOnly(textFind: 'Profile URL'),
-                            ListTile(
-                              title: nameTextField(
-                                  textFind:
-                                  'https://www.networknation.com/Professional_Pul..',
-                                  lengthfind: 301,
-                                  valueintfind: 1,
-                                  controllerfind: socialList[index].profileUrl,
-                                  keybordfindType: TextInputType.text),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                IconButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        int selectindex = index;
-                                        socialList.removeAt(selectindex);
-                                      });
-                                    },
-                                    icon: Icon(
-                                      Icons.delete_outline,
-                                      color: onContinueColor,
-                                    )),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                              ],
-                            )
-                          ],
+                  (index) => Container(
+                    child: Column(
+                      children: [
+                        buildRowTextOnly(textFind: 'Platform'),
+                        ListTile(
+                          title: nameTextField(
+                              textFind: 'Instagram',
+                              lengthfind: 21,
+                              valueintfind: 1,
+                              controllerfind: socialList[index].platform,
+                              keybordfindType: TextInputType.text),
                         ),
-                      ),
+                        buildRowTextOnly(textFind: 'Username'),
+                        ListTile(
+                          title: nameTextField(
+                              textFind: 'Admin1234',
+                              lengthfind: 31,
+                              valueintfind: 1,
+                              controllerfind: socialList[index].username,
+                              keybordfindType: TextInputType.text),
+                        ),
+                        buildRowTextOnly(textFind: 'Profile URL'),
+                        ListTile(
+                          title: nameTextField(
+                              textFind:
+                                  'https://www.networknation.com/Professional_Pul..',
+                              lengthfind: 301,
+                              valueintfind: 1,
+                              controllerfind: socialList[index].profileUrl,
+                              keybordfindType: TextInputType.text),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    int selectindex = index;
+                                    socialList.removeAt(selectindex);
+                                  });
+                                },
+                                icon: Icon(
+                                  Icons.delete_outline,
+                                  color: onContinueColor,
+                                )),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
                 ),
                 (socialList.length < 3)
                     ? GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      if (socialList.length < 3) {
-                        TextEditingController platfrom =
-                        TextEditingController();
-                        TextEditingController profileUrl =
-                        TextEditingController();
-                        TextEditingController username =
-                        TextEditingController();
-                        socialList.add(SocialModal(
-                          platform: platfrom,
-                          profileUrl: profileUrl,
-                          username: username,
-                        ));
-                      }
-                    });
-                  },
-                  child: Row(
-                    children: [
-                      const SizedBox(
-                        width: 25,
-                      ),
-                      Icon(
-                        Icons.add_circle,
-                        color: onContinueColor,
-                      ),
-                      Container(
-                        height: 50,
-                        width: 180,
-                        decoration: BoxDecoration(
-                            color: onTextFiledColor,
-                            borderRadius: BorderRadius.circular(30)),
-                        child: const Center(
-                          child: Text(
-                            'Add Social Media',
-                            style: TextStyle(color: Colors.black45),
-                          ),
+                        onTap: () {
+                          setState(() {
+                            if (socialList.length < 3) {
+                              TextEditingController platfrom =
+                                  TextEditingController();
+                              TextEditingController profileUrl =
+                                  TextEditingController();
+                              TextEditingController username =
+                                  TextEditingController();
+                              socialList.add(SocialModal(
+                                platform: platfrom,
+                                profileUrl: profileUrl,
+                                username: username,
+                              ));
+                            }
+                          });
+                        },
+                        child: Row(
+                          children: [
+                            const SizedBox(
+                              width: 25,
+                            ),
+                            Icon(
+                              Icons.add_circle,
+                              color: onContinueColor,
+                            ),
+                            Container(
+                              height: 50,
+                              width: 180,
+                              decoration: BoxDecoration(
+                                  color: onTextFiledColor,
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: const Center(
+                                child: Text(
+                                  'Add Social Media',
+                                  style: TextStyle(color: Colors.black45),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
-                  ),
-                )
+                      )
                     : Container(),
                 const SizedBox(
                   height: 20,
@@ -365,837 +358,969 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           (educationList.isEmpty)
               ? buildContainerAddingOption(
-            filledFind: 'Education',
-            detailsFind:
-            "You haven't added any education yet. Start adding & complete your CV!",
-            textButtonFind: ElevatedButton(
-              style: ButtonStyle(
-                  backgroundColor: WidgetStateColor.resolveWith(
-                        (states) => onScreenColor,
-                  ),
-                  overlayColor: WidgetStateColor.resolveWith(
-                        (states) => Colors.white30,
-                  )),
-              onPressed: () {
-                setState(() {
-                  TextEditingController txtschool =
-                  TextEditingController();
-                  TextEditingController txtlevel =
-                  TextEditingController();
-                  TextEditingController txtgrade =
-                  TextEditingController();
-                  TextEditingController txtstartYear =
-                  TextEditingController();
-                  TextEditingController txtendYear =
-                  TextEditingController();
-                  educationList.add(EducationModal(
-                    txtendYear: txtendYear,
-                    txtgrade: txtgrade,
-                    txtlevel: txtlevel,
-                    txtschool: txtschool,
-                    txtstartYear: txtstartYear,
-                  ));
-                });
-              },
-              child: const Text(
-                'Add Education',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          )
-              : SizedBox(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    children: [
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        'Education',
-                        style: TextStyle(color: onScreenColor),
-                      ),
-                    ],
-                  ),
-                  // SizedBox(height: 20,),
-                  ...List.generate(
-                    educationList.length,
-                        (index) =>
-                        Column(
-                          children: [
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            const Divider(),
-                            Container(
-                              // height: 70,
-                              padding: const EdgeInsets.all(10),
-                              child: Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    '${index + 1}',
-                                    style: TextStyle(
-                                        color: onScreenColor,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  const Spacer(),
-                                  IconButton(
-                                      onPressed: () {
-                                        setState(() {
-                                          educationList.removeAt(index);
-                                        });
-                                      },
-                                      icon: Icon(
-                                        Icons.delete_outline,
-                                        color: onContinueColor,
-                                      )),
-                                  const SizedBox(
-                                    width: 10,
-                                  )
-                                ],
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            buildRowTextOnly(textFind: 'School'),
-                            ListTile(
-                                title: nameTextField(
-                                    textFind: 'University of Any town',
-                                    lengthfind: 100,
-                                    valueintfind: 1,
-                                    controllerfind:
-                                    educationList[index].txtschool!,
-                                    keybordfindType: TextInputType.text)),
-                            buildRowTextOnly(textFind: 'Level'),
-                            ListTile(
-                                title: nameTextField(
-                                    textFind: 'Master',
-                                    lengthfind: 51,
-                                    valueintfind: 1,
-                                    controllerfind:
-                                    educationList[index].txtlevel!,
-                                    keybordfindType: TextInputType.text)),
-                            buildRowTextOnly(
-                                textFind: 'Grade/GPA (Optional)'),
-                            ListTile(
-                                title: nameTextField(
-                                    textFind: '3.50/4.00/B+',
-                                    lengthfind: 4,
-                                    valueintfind: 1,
-                                    controllerfind:
-                                    educationList[index].txtgrade!,
-                                    keybordfindType: TextInputType.text)),
-                            rowDateFill(
-                                w: w,
-                                index: index,
-                                txtstartYear:
-                                educationList[index].txtstartYear!,
-                                txtendYear: educationList[index].txtendYear!),
-                          ],
+                  filledFind: 'Education',
+                  detailsFind:
+                      "You haven't added any education yet. Start adding & complete your CV!",
+                  textButtonFind: ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor: WidgetStateColor.resolveWith(
+                          (states) => onScreenColor,
                         ),
-                  ),
-                  const Divider(),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  (educationList.length < 4)
-                      ? GestureDetector(
-                    onTap: () {
+                        overlayColor: WidgetStateColor.resolveWith(
+                          (states) => Colors.white30,
+                        )),
+                    onPressed: () {
                       setState(() {
-                        if (socialList.length < 4) {
-                          TextEditingController txtschool =
-                          TextEditingController();
-                          TextEditingController txtlevel =
-                          TextEditingController();
-                          TextEditingController txtgrade =
-                          TextEditingController();
-                          TextEditingController txtstartYear =
-                          TextEditingController();
-                          TextEditingController txtendYear =
-                          TextEditingController();
-                          educationList.add(EducationModal(
-                            txtendYear: txtendYear,
-                            txtgrade: txtgrade,
-                            txtlevel: txtlevel,
-                            txtschool: txtschool,
-                            txtstartYear: txtstartYear,
-                          ));
-                        }
+                        TextEditingController txtschool =
+                            TextEditingController();
+                        TextEditingController txtlevel =
+                            TextEditingController();
+                        TextEditingController txtgrade =
+                            TextEditingController();
+                        TextEditingController txtstartYear =
+                            TextEditingController();
+                        TextEditingController txtendYear =
+                            TextEditingController();
+                        educationList.add(EducationModal(
+                          txtendYear: txtendYear,
+                          txtgrade: txtgrade,
+                          txtlevel: txtlevel,
+                          txtschool: txtschool,
+                          txtstartYear: txtstartYear,
+                        ));
                       });
                     },
-                    child: Row(
+                    child: const Text(
+                      'Add Education',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                )
+              : SizedBox(
+                  child: SingleChildScrollView(
+                    child: Column(
                       children: [
                         const SizedBox(
-                          width: 25,
+                          height: 20,
                         ),
-                        Icon(
-                          Icons.add_circle,
-                          color: onContinueColor,
-                        ),
-                        Container(
-                          height: 50,
-                          width: 180,
-                          decoration: BoxDecoration(
-                              color: onTextFiledColor,
-                              borderRadius:
-                              BorderRadius.circular(30)),
-                          child: const Center(
-                            child: Text(
-                              'Add Education',
-                              style:
-                              TextStyle(color: Colors.black45),
+                        Row(
+                          children: [
+                            const SizedBox(
+                              width: 20,
                             ),
+                            Text(
+                              'Education',
+                              style: TextStyle(color: onScreenColor),
+                            ),
+                          ],
+                        ),
+                        // SizedBox(height: 20,),
+                        ...List.generate(
+                          educationList.length,
+                          (index) => Column(
+                            children: [
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              const Divider(),
+                              Container(
+                                // height: 70,
+                                padding: const EdgeInsets.all(10),
+                                child: Row(
+                                  children: [
+                                    const SizedBox(
+                                      width: 20,
+                                    ),
+                                    Text(
+                                      '${index + 1}',
+                                      style: TextStyle(
+                                          color: onScreenColor,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    const Spacer(),
+                                    IconButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            educationList.removeAt(index);
+                                          });
+                                        },
+                                        icon: Icon(
+                                          Icons.delete_outline,
+                                          color: onContinueColor,
+                                        )),
+                                    const SizedBox(
+                                      width: 10,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              buildRowTextOnly(textFind: 'School'),
+                              ListTile(
+                                  title: nameTextField(
+                                      textFind: 'University of Any town',
+                                      lengthfind: 100,
+                                      valueintfind: 1,
+                                      controllerfind:
+                                          educationList[index].txtschool!,
+                                      keybordfindType: TextInputType.text)),
+                              buildRowTextOnly(textFind: 'Level'),
+                              ListTile(
+                                  title: nameTextField(
+                                      textFind: 'Master',
+                                      lengthfind: 51,
+                                      valueintfind: 1,
+                                      controllerfind:
+                                          educationList[index].txtlevel!,
+                                      keybordfindType: TextInputType.text)),
+                              buildRowTextOnly(
+                                  textFind: 'Grade/GPA (Optional)'),
+                              ListTile(
+                                  title: nameTextField(
+                                      textFind: '3.50/4.00/B+',
+                                      lengthfind: 4,
+                                      valueintfind: 1,
+                                      controllerfind:
+                                          educationList[index].txtgrade!,
+                                      keybordfindType: TextInputType.text)),
+                              rowDateFill(
+                                  w: w,
+                                  index: index,
+                                  txtstartYear:
+                                      educationList[index].txtstartYear!,
+                                  txtendYear: educationList[index].txtendYear!),
+                            ],
                           ),
+                        ),
+                        const Divider(),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        (educationList.length < 4)
+                            ? GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    if (socialList.length < 4) {
+                                      TextEditingController txtschool =
+                                          TextEditingController();
+                                      TextEditingController txtlevel =
+                                          TextEditingController();
+                                      TextEditingController txtgrade =
+                                          TextEditingController();
+                                      TextEditingController txtstartYear =
+                                          TextEditingController();
+                                      TextEditingController txtendYear =
+                                          TextEditingController();
+                                      educationList.add(EducationModal(
+                                        txtendYear: txtendYear,
+                                        txtgrade: txtgrade,
+                                        txtlevel: txtlevel,
+                                        txtschool: txtschool,
+                                        txtstartYear: txtstartYear,
+                                      ));
+                                    }
+                                  });
+                                },
+                                child: Row(
+                                  children: [
+                                    const SizedBox(
+                                      width: 25,
+                                    ),
+                                    Icon(
+                                      Icons.add_circle,
+                                      color: onContinueColor,
+                                    ),
+                                    Container(
+                                      height: 50,
+                                      width: 180,
+                                      decoration: BoxDecoration(
+                                          color: onTextFiledColor,
+                                          borderRadius:
+                                              BorderRadius.circular(30)),
+                                      child: const Center(
+                                        child: Text(
+                                          'Add Education',
+                                          style:
+                                              TextStyle(color: Colors.black45),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            : Container(),
+                        const SizedBox(
+                          height: 20,
                         ),
                       ],
                     ),
-                  )
-                      : Container(),
-                  const SizedBox(
-                    height: 20,
                   ),
-                ],
-              ),
-            ),
-          ),
+                ),
           //Todo Experience
           (experienceList.isEmpty)
               ? Container(
-            child: buildContainerAddingOption(
-                filledFind: 'Experiences (Optional)',
-                detailsFind:
-                "You haven't added any experience yet. Start adding & complete your CV!",
-                textButtonFind: ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor: WidgetStateColor.resolveWith(
-                              (states) => onScreenColor,
-                        )),
-                    onPressed: () {
-                      setState(() {
-                        TextEditingController txtSummaryExperience =
-                        TextEditingController();
-                        TextEditingController txtCompany =
-                        TextEditingController();
-                        TextEditingController txtPosition =
-                        TextEditingController();
-                        TextEditingController txtJob =
-                        TextEditingController();
-                        TextEditingController txtStartYear =
-                        TextEditingController();
-                        TextEditingController txtEndYear =
-                        TextEditingController();
-                        experienceList.add(ExperienceModal(
-                            txtCompany: txtCompany,
-                            txtEndYear: txtEndYear,
-                            txtJob: txtJob,
-                            txtPosition: txtPosition,
-                            txtStartYear: txtStartYear,
-                            txtSummaryExperience: txtSummaryExperience));
-                      });
-                    },
-                    child: const Text(
-                      'Add Experience',
-                      style: TextStyle(color: Colors.white),
-                    ))),
-          )
+                  child: buildContainerAddingOption(
+                      filledFind: 'Experiences (Optional)',
+                      detailsFind:
+                          "You haven't added any experience yet. Start adding & complete your CV!",
+                      textButtonFind: ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor: WidgetStateColor.resolveWith(
+                            (states) => onScreenColor,
+                          )),
+                          onPressed: () {
+                            setState(() {
+                              TextEditingController txtSummaryExperience =
+                                  TextEditingController();
+                              TextEditingController txtCompany =
+                                  TextEditingController();
+                              TextEditingController txtPosition =
+                                  TextEditingController();
+                              TextEditingController txtJob =
+                                  TextEditingController();
+                              TextEditingController txtStartYear =
+                                  TextEditingController();
+                              TextEditingController txtEndYear =
+                                  TextEditingController();
+                              experienceList.add(ExperienceModal(
+                                  txtCompany: txtCompany,
+                                  txtEndYear: txtEndYear,
+                                  txtJob: txtJob,
+                                  txtPosition: txtPosition,
+                                  txtStartYear: txtStartYear,
+                                  txtSummaryExperience: txtSummaryExperience));
+                            });
+                          },
+                          child: const Text(
+                            'Add Experience',
+                            style: TextStyle(color: Colors.white),
+                          ))),
+                )
               : SizedBox(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    children: [
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        'Experience',
-                        style: TextStyle(color: onScreenColor),
-                      ),
-                    ],
-                  ),
-                  // SizedBox(height: 20,),
-                  ...List.generate(
-                    experienceList.length,
-                        (index) =>
-                        Column(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
                           children: [
                             const SizedBox(
-                              height: 20,
+                              width: 20,
                             ),
-                            const Divider(),
-                            Container(
-                              // height: 70,
-                              padding: const EdgeInsets.all(10),
-                              child: Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    '${index + 1}',
-                                    style: TextStyle(
-                                        color: onScreenColor,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  const Spacer(),
-                                  IconButton(
-                                      onPressed: () {
-                                        setState(() {
-                                          experienceList.removeAt(index);
-                                        });
-                                      },
-                                      icon: Icon(
-                                        Icons.delete_outline,
-                                        color: onContinueColor,
-                                      )),
-                                  const SizedBox(
-                                    width: 10,
-                                  )
-                                ],
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            buildRowTextOnly(
-                                textFind: 'Company/Organization Name'),
-                            ListTile(
-                                title: nameTextField(
-                                    textFind: 'Microsoft',
-                                    lengthfind: 100,
-                                    valueintfind: 1,
-                                    controllerfind:
-                                    experienceList[index].txtCompany!,
-                                    keybordfindType: TextInputType.text)),
-                            buildRowTextOnly(textFind: 'Position/Title'),
-                            ListTile(
-                                title: nameTextField(
-                                    textFind: 'Account Manager',
-                                    lengthfind: 51,
-                                    valueintfind: 1,
-                                    controllerfind:
-                                    experienceList[index].txtPosition!,
-                                    keybordfindType: TextInputType.text)),
-                            buildRowTextOnly(textFind: 'Job Type'),
-                            ListTile(
-                                title: nameTextField(
-                                    textFind: 'Full-time',
-                                    lengthfind: 30,
-                                    valueintfind: 1,
-                                    controllerfind:
-                                    experienceList[index].txtJob!,
-                                    keybordfindType: TextInputType.text)),
-                            rowDateFill(
-                                w: w,
-                                index: index,
-                                txtstartYear:
-                                experienceList[index].txtStartYear!,
-                                txtendYear:
-                                experienceList[index].txtEndYear!),
-                            buildRowTextOnly(textFind: 'Summary (Optional)'),
-                            ListTile(
-                              title: nameTextField(
-                                  keybordfindType: TextInputType.text,
-                                  textFind:
-                                  'Briefly describe your experience in this role.',
-                                  lengthfind: 150,
-                                  valueintfind: 7,
-                                  controllerfind: experienceList[index]
-                                      .txtSummaryExperience!),
+                            Text(
+                              'Experience',
+                              style: TextStyle(color: onScreenColor),
                             ),
                           ],
                         ),
-                  ),
-                  // buildRowTextOnly(textFind: 'Summary (Optional)'),
-                  const Divider(),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  (experienceList.length < 5)
-                      ? GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        if (experienceList.length < 5) {
-                          TextEditingController
-                          txtSummaryExperience =
-                          TextEditingController();
-                          TextEditingController txtCompany =
-                          TextEditingController();
-                          TextEditingController txtPosition =
-                          TextEditingController();
-                          TextEditingController txtJob =
-                          TextEditingController();
-                          TextEditingController txtStartYear =
-                          TextEditingController();
-                          TextEditingController txtEndYear =
-                          TextEditingController();
-                          experienceList.add(ExperienceModal(
-                              txtCompany: txtCompany,
-                              txtEndYear: txtEndYear,
-                              txtJob: txtJob,
-                              txtPosition: txtPosition,
-                              txtStartYear: txtStartYear,
-                              txtSummaryExperience:
-                              txtSummaryExperience));
-                        }
-                      });
-                    },
-                    child: Row(
-                      children: [
-                        const SizedBox(
-                          width: 25,
-                        ),
-                        Icon(
-                          Icons.add_circle,
-                          color: onContinueColor,
-                        ),
-                        Container(
-                          height: 50,
-                          width: 180,
-                          decoration: BoxDecoration(
-                              color: onTextFiledColor,
-                              borderRadius:
-                              BorderRadius.circular(30)),
-                          child: const Center(
-                            child: Text(
-                              'Add Education',
-                              style:
-                              TextStyle(color: Colors.black45),
-                            ),
+                        // SizedBox(height: 20,),
+                        ...List.generate(
+                          experienceList.length,
+                          (index) => Column(
+                            children: [
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              const Divider(),
+                              Container(
+                                // height: 70,
+                                padding: const EdgeInsets.all(10),
+                                child: Row(
+                                  children: [
+                                    const SizedBox(
+                                      width: 20,
+                                    ),
+                                    Text(
+                                      '${index + 1}',
+                                      style: TextStyle(
+                                          color: onScreenColor,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    const Spacer(),
+                                    IconButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            experienceList.removeAt(index);
+                                          });
+                                        },
+                                        icon: Icon(
+                                          Icons.delete_outline,
+                                          color: onContinueColor,
+                                        )),
+                                    const SizedBox(
+                                      width: 10,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              buildRowTextOnly(
+                                  textFind: 'Company/Organization Name'),
+                              ListTile(
+                                  title: nameTextField(
+                                      textFind: 'Microsoft',
+                                      lengthfind: 100,
+                                      valueintfind: 1,
+                                      controllerfind:
+                                          experienceList[index].txtCompany!,
+                                      keybordfindType: TextInputType.text)),
+                              buildRowTextOnly(textFind: 'Position/Title'),
+                              ListTile(
+                                  title: nameTextField(
+                                      textFind: 'Account Manager',
+                                      lengthfind: 51,
+                                      valueintfind: 1,
+                                      controllerfind:
+                                          experienceList[index].txtPosition!,
+                                      keybordfindType: TextInputType.text)),
+                              buildRowTextOnly(textFind: 'Job Type'),
+                              ListTile(
+                                  title: nameTextField(
+                                      textFind: 'Full-time',
+                                      lengthfind: 30,
+                                      valueintfind: 1,
+                                      controllerfind:
+                                          experienceList[index].txtJob!,
+                                      keybordfindType: TextInputType.text)),
+                              rowDateFill(
+                                  w: w,
+                                  index: index,
+                                  txtstartYear:
+                                      experienceList[index].txtStartYear!,
+                                  txtendYear:
+                                      experienceList[index].txtEndYear!),
+                              buildRowTextOnly(textFind: 'Summary (Optional)'),
+                              ListTile(
+                                title: nameTextField(
+                                    keybordfindType: TextInputType.text,
+                                    textFind:
+                                        'Briefly describe your experience in this role.',
+                                    lengthfind: 150,
+                                    valueintfind: 7,
+                                    controllerfind: experienceList[index]
+                                        .txtSummaryExperience!),
+                              ),
+                            ],
                           ),
+                        ),
+                        // buildRowTextOnly(textFind: 'Summary (Optional)'),
+                        const Divider(),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        (experienceList.length < 5)
+                            ? GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    if (experienceList.length < 5) {
+                                      TextEditingController
+                                          txtSummaryExperience =
+                                          TextEditingController();
+                                      TextEditingController txtCompany =
+                                          TextEditingController();
+                                      TextEditingController txtPosition =
+                                          TextEditingController();
+                                      TextEditingController txtJob =
+                                          TextEditingController();
+                                      TextEditingController txtStartYear =
+                                          TextEditingController();
+                                      TextEditingController txtEndYear =
+                                          TextEditingController();
+                                      experienceList.add(ExperienceModal(
+                                          txtCompany: txtCompany,
+                                          txtEndYear: txtEndYear,
+                                          txtJob: txtJob,
+                                          txtPosition: txtPosition,
+                                          txtStartYear: txtStartYear,
+                                          txtSummaryExperience:
+                                              txtSummaryExperience));
+                                    }
+                                  });
+                                },
+                                child: Row(
+                                  children: [
+                                    const SizedBox(
+                                      width: 25,
+                                    ),
+                                    Icon(
+                                      Icons.add_circle,
+                                      color: onContinueColor,
+                                    ),
+                                    Container(
+                                      height: 50,
+                                      width: 180,
+                                      decoration: BoxDecoration(
+                                          color: onTextFiledColor,
+                                          borderRadius:
+                                              BorderRadius.circular(30)),
+                                      child: const Center(
+                                        child: Text(
+                                          'Add Education',
+                                          style:
+                                              TextStyle(color: Colors.black45),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            : Container(),
+                        const SizedBox(
+                          height: 20,
                         ),
                       ],
                     ),
-                  )
-                      : Container(),
-                  const SizedBox(
-                    height: 20,
                   ),
-                ],
-              ),
-            ),
-          ),
+                ),
           //Todo Certificates
           (certificateList.isEmpty)
               ? Container(
-            child: buildContainerAddingOption(
-                filledFind: 'Certificates (Optional)',
-                detailsFind:
-                "You haven't added any certificate yet. Start adding & complete your CV!",
-                textButtonFind: ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor: WidgetStateColor.resolveWith(
-                              (states) => onScreenColor,
-                        )),
-                    onPressed: () {
-                      setState(() {
-                        TextEditingController txtCertificateName =
-                        TextEditingController();
-                        TextEditingController txtInstituteName =
-                        TextEditingController();
-                        TextEditingController txtCertificationYear =
-                        TextEditingController();
-                        TextEditingController txtSummary =
-                        TextEditingController();
-                        certificateList.add(CertificateModal(
-                            txtCertificateName: txtCertificateName,
-                            txtCertificationYear: txtCertificationYear,
-                            txtInstituteName: txtInstituteName,
-                            txtSummary: txtSummary));
-                      });
-                    },
-                    child: const Text(
-                      'Add Certificate',
-                      style: TextStyle(color: Colors.white),
-                    ))),
-          )
+                  child: buildContainerAddingOption(
+                      filledFind: 'Certificates (Optional)',
+                      detailsFind:
+                          "You haven't added any certificate yet. Start adding & complete your CV!",
+                      textButtonFind: ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor: WidgetStateColor.resolveWith(
+                            (states) => onScreenColor,
+                          )),
+                          onPressed: () {
+                            setState(() {
+                              TextEditingController txtCertificateName =
+                                  TextEditingController();
+                              TextEditingController txtInstituteName =
+                                  TextEditingController();
+                              TextEditingController txtCertificationYear =
+                                  TextEditingController();
+                              TextEditingController txtSummary =
+                                  TextEditingController();
+                              certificateList.add(CertificateModal(
+                                  txtCertificateName: txtCertificateName,
+                                  txtCertificationYear: txtCertificationYear,
+                                  txtInstituteName: txtInstituteName,
+                                  txtSummary: txtSummary));
+                            });
+                          },
+                          child: const Text(
+                            'Add Certificate',
+                            style: TextStyle(color: Colors.white),
+                          ))),
+                )
               : SizedBox(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    children: [
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        'Certificate',
-                        style: TextStyle(color: onScreenColor),
-                      ),
-                    ],
-                  ),
-                  // SizedBox(height: 20,),
-                  ...List.generate(
-                    certificateList.length,
-                        (index) =>
-                        Column(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
                           children: [
                             const SizedBox(
-                              height: 20,
+                              width: 20,
                             ),
-                            const Divider(),
-                            Container(
-                              // height: 70,
-                              padding: const EdgeInsets.all(10),
-                              child: Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    '${index + 1}',
-                                    style: TextStyle(
-                                        color: onScreenColor,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  const Spacer(),
-                                  IconButton(
-                                      onPressed: () {
-                                        setState(() {
-                                          certificateList.removeAt(index);
-                                        });
-                                      },
-                                      icon: Icon(
-                                        Icons.delete_outline,
-                                        color: onContinueColor,
-                                      )),
-                                  const SizedBox(
-                                    width: 10,
-                                  )
-                                ],
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            buildRowTextOnly(textFind: 'Certificate Name'),
-                            ListTile(
-                                title: nameTextField(
-                                    textFind: 'Google Ads',
-                                    lengthfind: 51,
-                                    valueintfind: 1,
-                                    controllerfind: certificateList[index]
-                                        .txtCertificateName!,
-                                    keybordfindType: TextInputType.text)),
-                            buildRowTextOnly(textFind: 'Institute Name'),
-                            ListTile(
-                                title: nameTextField(
-                                    textFind: 'InnovateX Training',
-                                    lengthfind: 51,
-                                    valueintfind: 1,
-                                    controllerfind: certificateList[index]
-                                        .txtInstituteName!,
-                                    keybordfindType: TextInputType.text)),
-                            buildRowTextOnly(textFind: 'Certification Year'),
-                            ListTile(
-                                title: nameTextField(
-                                    textFind: '2024',
-                                    lengthfind: 5,
-                                    valueintfind: 1,
-                                    controllerfind: certificateList[index]
-                                        .txtCertificationYear!,
-                                    keybordfindType: TextInputType.number)),
-                            buildRowTextOnly(textFind: 'Summary (Optional)'),
-                            ListTile(
-                              title: nameTextField(
-                                  keybordfindType: TextInputType.text,
-                                  textFind:
-                                  'Summarize your certificates briefly highlighting relevant qualifications and expertise.',
-                                  lengthfind: 150,
-                                  valueintfind: 7,
-                                  controllerfind: certificateList[index]
-                                      .txtCertificationYear!),
+                            Text(
+                              'Certificate',
+                              style: TextStyle(color: onScreenColor),
                             ),
                           ],
                         ),
-                  ),
-                  // buildRowTextOnly(textFind: 'Summary (Optional)'),
-                  const Divider(),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  (certificateList.length < 5)
-                      ? GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        if (certificateList.length < 5) {
-                          TextEditingController txtCertificateName =
-                          TextEditingController();
-                          TextEditingController txtInstituteName =
-                          TextEditingController();
-                          TextEditingController
-                          txtCertificationYear =
-                          TextEditingController();
-                          TextEditingController txtSummary =
-                          TextEditingController();
-                          certificateList.add(CertificateModal(
-                              txtCertificateName:
-                              txtCertificateName,
-                              txtCertificationYear:
-                              txtCertificationYear,
-                              txtInstituteName: txtInstituteName,
-                              txtSummary: txtSummary));
-                        }
-                      });
-                    },
-                    child: Row(
-                      children: [
-                        const SizedBox(
-                          width: 25,
-                        ),
-                        Icon(
-                          Icons.add_circle,
-                          color: onContinueColor,
-                        ),
-                        Container(
-                          height: 50,
-                          width: 180,
-                          decoration: BoxDecoration(
-                              color: onTextFiledColor,
-                              borderRadius:
-                              BorderRadius.circular(30)),
-                          child: const Center(
-                            child: Text(
-                              'Add Education',
-                              style:
-                              TextStyle(color: Colors.black45),
-                            ),
+                        // SizedBox(height: 20,),
+                        ...List.generate(
+                          certificateList.length,
+                          (index) => Column(
+                            children: [
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              const Divider(),
+                              Container(
+                                // height: 70,
+                                padding: const EdgeInsets.all(10),
+                                child: Row(
+                                  children: [
+                                    const SizedBox(
+                                      width: 20,
+                                    ),
+                                    Text(
+                                      '${index + 1}',
+                                      style: TextStyle(
+                                          color: onScreenColor,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    const Spacer(),
+                                    IconButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            certificateList.removeAt(index);
+                                          });
+                                        },
+                                        icon: Icon(
+                                          Icons.delete_outline,
+                                          color: onContinueColor,
+                                        )),
+                                    const SizedBox(
+                                      width: 10,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              buildRowTextOnly(textFind: 'Certificate Name'),
+                              ListTile(
+                                  title: nameTextField(
+                                      textFind: 'Google Ads',
+                                      lengthfind: 51,
+                                      valueintfind: 1,
+                                      controllerfind: certificateList[index]
+                                          .txtCertificateName!,
+                                      keybordfindType: TextInputType.text)),
+                              buildRowTextOnly(textFind: 'Institute Name'),
+                              ListTile(
+                                  title: nameTextField(
+                                      textFind: 'InnovateX Training',
+                                      lengthfind: 51,
+                                      valueintfind: 1,
+                                      controllerfind: certificateList[index]
+                                          .txtInstituteName!,
+                                      keybordfindType: TextInputType.text)),
+                              buildRowTextOnly(textFind: 'Certification Year'),
+                              ListTile(
+                                  title: nameTextField(
+                                      textFind: '2024',
+                                      lengthfind: 5,
+                                      valueintfind: 1,
+                                      controllerfind: certificateList[index]
+                                          .txtCertificationYear!,
+                                      keybordfindType: TextInputType.number)),
+                              buildRowTextOnly(textFind: 'Summary (Optional)'),
+                              ListTile(
+                                title: nameTextField(
+                                    keybordfindType: TextInputType.text,
+                                    textFind:
+                                        'Summarize your certificates briefly highlighting relevant qualifications and expertise.',
+                                    lengthfind: 150,
+                                    valueintfind: 7,
+                                    controllerfind: certificateList[index]
+                                        .txtCertificationYear!),
+                              ),
+                            ],
                           ),
+                        ),
+                        // buildRowTextOnly(textFind: 'Summary (Optional)'),
+                        const Divider(),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        (certificateList.length < 5)
+                            ? GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    if (certificateList.length < 5) {
+                                      TextEditingController txtCertificateName =
+                                          TextEditingController();
+                                      TextEditingController txtInstituteName =
+                                          TextEditingController();
+                                      TextEditingController
+                                          txtCertificationYear =
+                                          TextEditingController();
+                                      TextEditingController txtSummary =
+                                          TextEditingController();
+                                      certificateList.add(CertificateModal(
+                                          txtCertificateName:
+                                              txtCertificateName,
+                                          txtCertificationYear:
+                                              txtCertificationYear,
+                                          txtInstituteName: txtInstituteName,
+                                          txtSummary: txtSummary));
+                                    }
+                                  });
+                                },
+                                child: Row(
+                                  children: [
+                                    const SizedBox(
+                                      width: 25,
+                                    ),
+                                    Icon(
+                                      Icons.add_circle,
+                                      color: onContinueColor,
+                                    ),
+                                    Container(
+                                      height: 50,
+                                      width: 180,
+                                      decoration: BoxDecoration(
+                                          color: onTextFiledColor,
+                                          borderRadius:
+                                              BorderRadius.circular(30)),
+                                      child: const Center(
+                                        child: Text(
+                                          'Add Education',
+                                          style:
+                                              TextStyle(color: Colors.black45),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            : Container(),
+                        const SizedBox(
+                          height: 20,
                         ),
                       ],
                     ),
-                  )
-                      : Container(),
-                  const SizedBox(
-                    height: 20,
                   ),
-                ],
-              ),
-            ),
-          ),
+                ),
           (languageList.isEmpty)
               ? Container(
-            child: buildContainerAddingOption(
-                filledFind: 'Languages (Optional)',
-                detailsFind:
-                "You haven't added any language yet. Start adding & complete your CV!",
-                textButtonFind: ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor: WidgetStateColor.resolveWith(
-                              (states) => onScreenColor,
-                        )),
-                    onPressed: () {
-                      setState(() {
-                        TextEditingController txtLanguage =
-                        TextEditingController();
-                        languageList
-                            .add(LanguageModal(txtLanguage: txtLanguage));
-                      });
-                    },
-                    child: const Text(
-                      'Add Language',
-                      style: TextStyle(color: Colors.white),
-                    ))),
-          )
+                  child: buildContainerAddingOption(
+                      filledFind: 'Languages (Optional)',
+                      detailsFind:
+                          "You haven't added any language yet. Start adding & complete your CV!",
+                      textButtonFind: ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor: WidgetStateColor.resolveWith(
+                            (states) => onScreenColor,
+                          )),
+                          onPressed: () {
+                            setState(() {
+                              TextEditingController txtLanguage =
+                                  TextEditingController();
+                              languageList
+                                  .add(LanguageModal(txtLanguage: txtLanguage));
+                            });
+                          },
+                          child: const Text(
+                            'Add Language',
+                            style: TextStyle(color: Colors.white),
+                          ))),
+                )
               : Container(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  ...List.generate(
-                    languageList.length,
-                        (index) =>
-                        Column(
-                          children: [
-                            buildRowTextOnly(textFind: 'Language'),
-                            ListTile(
-                              title: nameTextField(
-                                  keybordfindType: TextInputType.text,
-                                  textFind: 'Sanskrit',
-                                  lengthfind: 19,
-                                  valueintfind: 1,
-                                  controllerfind:
-                                  languageList[index].txtLanguage!),
-                              trailing: IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    languageList.removeAt(index);
-                                  });
-                                },
-                                icon: Icon(
-                                  Icons.highlight_remove,
-                                  color: onContinueColor,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        ...List.generate(
+                          languageList.length,
+                          (index) => Column(
+                            children: [
+                              buildRowTextOnly(textFind: 'Language'),
+                              ListTile(
+                                title: nameTextField(
+                                    keybordfindType: TextInputType.text,
+                                    textFind: 'Sanskrit',
+                                    lengthfind: 19,
+                                    valueintfind: 1,
+                                    controllerfind:
+                                        languageList[index].txtLanguage!),
+                                trailing: IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      languageList.removeAt(index);
+                                    });
+                                  },
+                                  icon: Icon(
+                                    Icons.highlight_remove,
+                                    color: onContinueColor,
+                                  ),
                                 ),
                               ),
+                            ],
+                          ),
+                        ),
+                        ElevatedButton(
+                            style: ButtonStyle(
+                                backgroundColor: WidgetStateColor.resolveWith(
+                              (states) => onScreenColor,
+                            )),
+                            onPressed: () {
+                              setState(() {
+                                TextEditingController txtLanguage =
+                                    TextEditingController();
+                                if (languageList[languageList.length - 1]
+                                    .txtLanguage!
+                                    .text
+                                    .isNotEmpty) {
+                                  languageList.add(
+                                      LanguageModal(txtLanguage: txtLanguage));
+                                }
+                              });
+                            },
+                            child: const Text(
+                              'Add Language',
+                              style: TextStyle(color: Colors.white),
+                            )),
+                      ],
+                    ),
+                  ),
+                ),
+          (skillsList.isEmpty)
+              ? Container(
+                  child: buildContainerAddingOption(
+                    filledFind: 'Skills (Optional)',
+                    detailsFind:
+                        "You haven't added any skill yet. Start adding & complete your CV!",
+                    textButtonFind: ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: WidgetStateColor.resolveWith(
+                        (states) => onScreenColor,
+                      )),
+                      onPressed: () {
+                        setState(() {
+                          TextEditingController txtSkills =
+                              TextEditingController();
+                          TextEditingController txtExperience =
+                              TextEditingController();
+                          skillsList.add(SkillsModal(
+                              txtSkills: txtSkills,
+                              txtExperience: txtExperience));
+                        });
+                      },
+                      child: const Text(
+                        'Add Skill',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                )
+              : SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ...List.generate(
+                        skillsList.length,
+                        (index) => Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                buildRowTextOnly(textFind: 'Skill'),
+                                Container(
+                                  width: w / 2.5,
+                                  child: nameTextField(
+                                      textFind: 'Flutter',
+                                      lengthfind: 20,
+                                      valueintfind: 1,
+                                      controllerfind:
+                                          skillsList[index].txtSkills!,
+                                      keybordfindType: TextInputType.text),
+                                ),
+                              ],
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  skillsList.removeAt(index);
+                                });
+                              },
+                              icon: Icon(
+                                Icons.highlight_remove,
+                                color: onContinueColor,
+                              ),
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                buildRowTextOnly(textFind: 'Experience'),
+                                Container(
+                                    width: w / 2.5,
+                                    child: nameTextField(
+                                        textFind: '6 Year',
+                                        lengthfind: 3,
+                                        valueintfind: 1,
+                                        controllerfind:
+                                            skillsList[index].txtExperience!,
+                                        keybordfindType: TextInputType.number)),
+                              ],
                             ),
                           ],
                         ),
+                      ),
+                      ElevatedButton(
+                        style: ButtonStyle(
+                            backgroundColor: WidgetStateColor.resolveWith(
+                          (states) => onScreenColor,
+                        )),
+                        onPressed: () {
+                          setState(() {
+                            TextEditingController txtSkills =
+                                TextEditingController();
+                            TextEditingController txtExperience =
+                                TextEditingController();
+
+                            if (skillsList[skillsList.length - 1]
+                                    .txtExperience!
+                                    .text
+                                    .isNotEmpty &&
+                                skillsList[skillsList.length - 1]
+                                    .txtSkills!
+                                    .text
+                                    .isNotEmpty) {
+                              skillsList.add(SkillsModal(
+                                  txtSkills: txtSkills,
+                                  txtExperience: txtExperience));
+                            }
+                          });
+                        },
+                        child: const Text(
+                          'Add Skill',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      )
+                    ],
                   ),
-                  ElevatedButton(
+                ),
+          (referencesList.isEmpty)
+              ? Container(
+                  child: buildContainerAddingOption(
+                    filledFind: 'References (Optional)',
+                    detailsFind:
+                        "You haven't added any reference yet. Start adding & complete your CV!",
+                    textButtonFind: ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: WidgetStateColor.resolveWith(
+                        (states) => onScreenColor,
+                      )),
+                      onPressed: () {
+                        setState(() {
+                          TextEditingController txtFullName =
+                              TextEditingController();
+                          TextEditingController txtPositionTitle =
+                              TextEditingController();
+                          TextEditingController txtCompanyName =
+                              TextEditingController();
+                          TextEditingController txtPhoneNumber =
+                              TextEditingController();
+                          TextEditingController txtEmailAddress =
+                              TextEditingController();
+                          referencesList.add(ReferencesModal(
+                              txtCompanyName: txtCompanyName,
+                              txtEmailAddress: txtEmailAddress,
+                              txtFullName: txtFullName,
+                              txtPhoneNumber: txtPhoneNumber,
+                              txtPositionTitle: txtPositionTitle));
+                        });
+                      },
+                      child: const Text(
+                        'Add References',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                )
+              : SingleChildScrollView(
+                child: Column(
+                  children: [
+                    ...List.generate(
+                      referencesList.length,
+                      (index) => Column(
+                        children: [
+                          const SizedBox(height: 20,),
+                          buildRowTextOnly(textFind: 'Full Name'),
+                          ListTile(
+                            title: nameTextField(
+                                keybordfindType: TextInputType.text,
+                                textFind: 'Adam Rush',
+                                lengthfind: 31,
+                                valueintfind: 1,
+                                controllerfind:
+                                    referencesList[index].txtFullName!),
+                          ),
+                          buildRowTextOnly(textFind: 'Position/Title'),
+                          ListTile(
+                            title: nameTextField(
+                                keybordfindType: TextInputType.text,
+                                textFind: '3D Artist',
+                                lengthfind: 51,
+                                valueintfind: 1,
+                                controllerfind:
+                                    referencesList[index].txtPositionTitle!),
+                          ),
+                          buildRowTextOnly(textFind: 'Company/Organization Name (Optional)'),
+                          ListTile(
+                            title: nameTextField(
+                                keybordfindType: TextInputType.text,
+                                textFind: 'Microsoft',
+                                lengthfind: 100,
+                                valueintfind: 1,
+                                controllerfind:
+                                    referencesList[index].txtCompanyName!),
+                          ),
+                          buildRowTextOnly(textFind: 'Phone Number'),
+                          ListTile(
+                            title: nameTextField(
+                                keybordfindType: TextInputType.number,
+                                textFind: '9678568796',
+                                lengthfind: 11,
+                                valueintfind: 1,
+                                controllerfind:
+                                    referencesList[index].txtPhoneNumber!),
+                          ),
+                          buildRowTextOnly(textFind: 'Email Address'),
+                          ListTile(
+                            title: nameTextField(
+                                keybordfindType: TextInputType.text,
+                                textFind: 'admin1234@mail.com',
+                                lengthfind: 33,
+                                valueintfind: 1,
+                                controllerfind:
+                                    referencesList[index].txtEmailAddress!),
+                          ),
+                    IconButton(onPressed: () {
+                      setState(() {
+                        referencesList.removeAt(index);
+                      });
+                    }, icon: Icon(Icons.highlight_remove,color: onContinueColor,)),
+                    const Divider(),
+                        ],
+                      ),
+                    ),
+                    (referencesList.length<3)?ElevatedButton(
                       style: ButtonStyle(
                           backgroundColor: WidgetStateColor.resolveWith(
                                 (states) => onScreenColor,
                           )),
                       onPressed: () {
                         setState(() {
-                          TextEditingController txtLanguage =
+                          TextEditingController txtFullName =
                           TextEditingController();
-                          if (languageList[languageList.length - 1]
-                              .txtLanguage!
-                              .text
-                              .isNotEmpty) {
-                            languageList.add(
-                                LanguageModal(txtLanguage: txtLanguage));
-                          }
+                          TextEditingController txtPositionTitle =
+                          TextEditingController();
+                          TextEditingController txtCompanyName =
+                          TextEditingController();
+                          TextEditingController txtPhoneNumber =
+                          TextEditingController();
+                          TextEditingController txtEmailAddress =
+                          TextEditingController();
+                          referencesList.add(ReferencesModal(
+                              txtCompanyName: txtCompanyName,
+                              txtEmailAddress: txtEmailAddress,
+                              txtFullName: txtFullName,
+                              txtPhoneNumber: txtPhoneNumber,
+                              txtPositionTitle: txtPositionTitle));
                         });
                       },
                       child: const Text(
-                        'Add Language',
+                        'Add References',
                         style: TextStyle(color: Colors.white),
-                      )),
-                ],
-              ),
-            ),
-          ),
-          (skillsList.isEmpty)
-              ? Container(
-            child: buildContainerAddingOption(
-              filledFind: 'Skills (Optional)',
-              detailsFind:
-              "You haven't added any skill yet. Start adding & complete your CV!",
-              textButtonFind: ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor: WidgetStateColor.resolveWith(
-                          (states) => onScreenColor,
-                    )),
-                onPressed: () {
-                  setState(() {
-                    TextEditingController txtSkills =
-                    TextEditingController();
-                    TextEditingController txtExperience =
-                    TextEditingController();
-                    skillsList.add(SkillsModal(
-                        txtSkills: txtSkills,
-                        txtExperience: txtExperience));
-                  });
-                },
-                child: const Text(
-                  'Add Skill',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-          )
-              : SingleChildScrollView(
-            child: Column(
-              children: [
-                ...List.generate(
-                  skillsList.length,
-                      (index) =>
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              buildRowTextOnly(textFind: 'Skill'),
-                              Container(
-                                width: w / 2.5,
-                                child: nameTextField(
-                                    textFind: 'Flutter',
-                                    lengthfind: 20,
-                                    valueintfind: 1,
-                                    controllerfind:
-                                    skillsList[index].txtSkills!,
-                                    keybordfindType: TextInputType.text),
-                              ),
-                            ],
-                          ),
-                          IconButton(
-                            onPressed: () {
-                              setState(() {
-                                skillsList.removeAt(index);
-                              });
-                            },
-                            icon: Icon(
-                              Icons.highlight_remove,
-                              color: onContinueColor,
-                            ),
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: 20,
-                              ),
-                              buildRowTextOnly(textFind: 'Experience'),
-                              Container(
-                                  width: w / 2.5,
-                                  child: nameTextField(
-                                      textFind: '6 Year',
-                                      lengthfind: 3,
-                                      valueintfind: 1,
-                                      controllerfind:
-                                      skillsList[index].txtExperience!,
-                                      keybordfindType: TextInputType.number)),
-                            ],
-                          ),
-                        ],
                       ),
+                    ):Container(),
+                  ],
                 ),
-                ElevatedButton(
-                  style: ButtonStyle(
-                      backgroundColor: WidgetStateColor.resolveWith(
-                            (states) => onScreenColor,
-                      )),
-                  onPressed: () {
-                    setState(() {
-                      TextEditingController txtSkills =
-                      TextEditingController();
-                      TextEditingController txtExperience =
-                      TextEditingController();
-
-                      if (skillsList[skillsList.length - 1]
-                          .txtExperience!
-                          .text
-                          .isNotEmpty &&
-                          skillsList[skillsList.length - 1]
-                              .txtSkills!
-                              .text
-                              .isNotEmpty) {
-                        skillsList.add(SkillsModal(
-                            txtSkills: txtSkills,
-                            txtExperience: txtExperience));
-                      }
-                    });
-                  },
-                  child: const Text(
-                    'Add Skill',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                )
-              ],
-            ),
-          ),
-          (referencesList.isEmpty)
-              ? Container(
+              ),
+          Container(
             child: buildContainerAddingOption(
               filledFind: 'References (Optional)',
               detailsFind:
-              "You haven't added any reference yet. Start adding & complete your CV!",
+              "You haven't Generate any PDF yet. Start Generate PDF & complete your CV!",
               textButtonFind: ElevatedButton(
                 style: ButtonStyle(
                     backgroundColor: WidgetStateColor.resolveWith(
@@ -1203,47 +1328,26 @@ class _ProfilePageState extends State<ProfilePage> {
                     )),
                 onPressed: () {
                   setState(() {
-                    TextEditingController txtFullName = TextEditingController();
-                    TextEditingController txtPositionTitle = TextEditingController();
-                    TextEditingController txtCompanyName = TextEditingController();
-                    TextEditingController txtPhoneNumber = TextEditingController();
-                    TextEditingController txtEmailAddress = TextEditingController();
-                    referencesList.add(ReferencesModal(
-                        txtCompanyName:txtCompanyName, txtEmailAddress: txtEmailAddress, txtFullName: txtFullName,
-                        txtPhoneNumber:txtPhoneNumber, txtPositionTitle: txtPositionTitle));
+
                   });
                 },
                 child: const Text(
-                  'Add References',
+                  'PDF Generate',
                   style: TextStyle(color: Colors.white),
                 ),
               ),
             ),
-          )
-              : Container(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  ...List.generate(referencesList.length, (index) => Column(
-                    children: [
-                      ListTile(title: nameTextField(keybordfindType: TextInputType.text, textFind: 'Name', lengthfind: 51, valueintfind: 1, controllerfind: referencesList[index].txtEmailAddress!),),
-                    ],
-                  ),
-                    )
-                ],
-              ),
-            ),
           ),
-          Container(),
         ]),
       ),
     );
   }
 
-  Row rowDateFill({required double w,
-    required int index,
-    required TextEditingController txtstartYear,
-    required TextEditingController txtendYear}) {
+  Row rowDateFill(
+      {required double w,
+      required int index,
+      required TextEditingController txtstartYear,
+      required TextEditingController txtendYear}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
@@ -1279,9 +1383,10 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  Widget buildContainerAddingOption({required String filledFind,
-    required String detailsFind,
-    required ElevatedButton textButtonFind}) {
+  Widget buildContainerAddingOption(
+      {required String filledFind,
+      required String detailsFind,
+      required ElevatedButton textButtonFind}) {
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -1312,7 +1417,7 @@ class _ProfilePageState extends State<ProfilePage> {
               detailsFind,
               textAlign: TextAlign.center,
               style:
-              TextStyle(color: onScreenColor, fontWeight: FontWeight.bold),
+                  TextStyle(color: onScreenColor, fontWeight: FontWeight.bold),
             ),
           ),
           textButtonFind,
