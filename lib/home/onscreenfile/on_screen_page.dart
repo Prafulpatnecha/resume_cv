@@ -19,8 +19,7 @@ class _OnScreenState extends State<OnScreen> {
     super.initState();
     Timer(
         const Duration(seconds: 3),
-            () => Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (BuildContext context) => const StartedPage())));
+            () => Navigator.of(context).pushReplacementNamed('/'));
   }
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
